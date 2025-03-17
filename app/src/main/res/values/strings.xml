@@ -2,7 +2,10 @@
     <string name="app_name">GroupProject476</string>
     <string name="welcome_message">Welcome to our Group\'s App</string>
     <string name="welcome_description">This app ______</string>
-    <string name="loginButton">Enter to Login</string>
+    <string name="login_button">Enter to Login</string>
     <string name="password_hint">Enter your password:</string>
     <string name="username_hint">Enter your username:</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="create_an_account">Create an Account</string>
 </resources>
