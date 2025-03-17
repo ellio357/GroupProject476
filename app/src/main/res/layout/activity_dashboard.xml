@@ -10,7 +10,7 @@
         android:id="@+id/textViewWelcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome!"
+        android:text="@string/welcome"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"/>
@@ -19,6 +19,6 @@
         android:id="@+id/buttonLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logout"
+        android:text="@string/logout"
         />
 </LinearLayout>

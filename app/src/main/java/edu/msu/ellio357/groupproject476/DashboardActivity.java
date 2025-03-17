@@ -14,8 +14,6 @@ import com.google.firebase.auth.FirebaseUser;
 public class DashboardActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private TextView welcomeTextView;
-    private Button logoutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +23,8 @@ public class DashboardActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
 
-        welcomeTextView = findViewById(R.id.textViewWelcome);
-        logoutButton = findViewById(R.id.buttonLogout);
+        TextView welcomeTextView = findViewById(R.id.textViewWelcome);
+        Button logoutButton = findViewById(R.id.buttonLogout);
 
         if (user != null) {
             welcomeTextView.setText("Welcome, " + user.getEmail());

@@ -15,7 +15,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private EditText emailEditText, passwordEditText;
-    private Button registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         emailEditText = findViewById(R.id.registerEmail);
         passwordEditText = findViewById(R.id.registerPassword);
-        registerButton = findViewById(R.id.registerButton);
+        Button registerButton = findViewById(R.id.registerButton);
 
         registerButton.setOnClickListener(v -> registerUser());
     }
