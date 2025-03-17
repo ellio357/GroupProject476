@@ -38,6 +38,7 @@ public class WorkoutEntryActivity extends AppCompatActivity
         } else {
             Toast.makeText(this, "Workout length is required", Toast.LENGTH_SHORT).show();
         }
+        Toast.makeText(this, "Workout Entry Screen Loaded", Toast.LENGTH_SHORT).show();
 
         Button recordButton = findViewById(R.id.recordButton);
 
@@ -47,6 +48,7 @@ public class WorkoutEntryActivity extends AppCompatActivity
 
     protected void recordWorkout()
     {
+        boolean success = false;
         String name = mWorkoutName.getText().toString().trim();
         String cals = mWorkoutCals.getText().toString().trim();
         Integer calories = Integer.parseInt(cals);
@@ -69,11 +71,12 @@ public class WorkoutEntryActivity extends AppCompatActivity
                 .addOnSuccessListener(documentReference -> {
                     Toast.makeText(this, "Workout added!", Toast.LENGTH_SHORT).show();
                     loadWorkouts(); // Refresh the list
+
                 })
                 .addOnFailureListener(e -> {
                     Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
-        boolean success = true;
+        success = true;
         if (success) {
             Toast.makeText(this, "Workout recorded!", Toast.LENGTH_SHORT).show();
             // Optionally clear inputs
