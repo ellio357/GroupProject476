@@ -14,4 +14,4 @@
 
 ### Assignment Links
 - [Project Assignment 1](https://docs.google.com/document/d/1lOiuZTXbklUYtjccfjsCf8jQKM8jZxMRnw_54z3-ymY/edit?tab=t.0)
-- [Future Project Assignment](https://docs.google.com/document/d/1ZVSedih4nr_yegDeCHXoxshBPwfV0ZUzBbUQT_O0cmY/edit?tab=t.0)
+- [Project Implementation Assignemnts](https://docs.google.com/document/d/1ZVSedih4nr_yegDeCHXoxshBPwfV0ZUzBbUQT_O0cmY/edit?tab=t.0)
