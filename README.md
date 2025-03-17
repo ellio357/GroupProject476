@@ -3,8 +3,8 @@
 - Hussein Ahmad
 - Jordan S
 - Kelsi Elliott
-- Mayank
-- Mohid
+- Mayank Gudi
+- Mohid Imran
 
 
 ### Assignment Links

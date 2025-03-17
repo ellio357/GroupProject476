@@ -11,4 +11,10 @@
     <string name="welcome">Welcome!</string>
     <string name="logout">Logout</string>
     <string name="register">Register</string>
+    <string name="record">Record</string>
+    <string name="workout">Workout</string>
+    <string name="workout_message">Input Your Workout</string>
+    <string name="workout_entry">Enter Workout</string>
+    <string name="workout_cals">Enter Calories Burned</string>
+    <string name="workout_length">Enter Workout Length (minutes)</string>
 </resources>
