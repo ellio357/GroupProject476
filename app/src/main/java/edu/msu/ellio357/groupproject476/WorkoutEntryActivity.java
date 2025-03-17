@@ -11,10 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class WorkoutEntryActivity extends AppCompatActivity
 {
-    private EditText mWorkoutName, mWorkoutType, mWorkoutLength;
-//    Test database until we get it working
-//    private SQLDatabaseClass mTestdatabase;
+    private EditText mWorkoutName, mWorkoutCals, mWorkoutLength;
 
+    private WorkoutDatabase workoutDatabase;
 
 
     @Override
@@ -23,8 +22,10 @@ public class WorkoutEntryActivity extends AppCompatActivity
         setContentView(R.layout.activity_workout_entry);
 
         mWorkoutName = findViewById(R.id.addWorkoutName);
-        mWorkoutType = findViewById(R.id.addWorkoutCals);
+        mWorkoutCals = findViewById(R.id.addWorkoutCals);
         mWorkoutLength = findViewById(R.id.addWorkoutLength);
+        workoutDatabase = new WorkoutDatabase();
+
 
         String lengthText = mWorkoutLength.getText().toString().trim();
         if (!lengthText.isEmpty()) {
@@ -41,16 +42,17 @@ public class WorkoutEntryActivity extends AppCompatActivity
         Button recordButton = findViewById(R.id.recordButton);
 
         recordButton.setOnClickListener(v -> recordWorkout());
-
+        loadWorkouts();
     }
 
     protected void recordWorkout()
     {
         String name = mWorkoutName.getText().toString().trim();
-        String type = mWorkoutType.getText().toString().trim();
+        String cals = mWorkoutCals.getText().toString().trim();
+        Integer calories = Integer.parseInt(cals);
         String lengthText = mWorkoutLength.getText().toString().trim();
 
-        if (name.isEmpty() || type.isEmpty() || lengthText.isEmpty()) {
+        if (name.isEmpty() || cals.isEmpty() || lengthText.isEmpty()) {
             Toast.makeText(this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -62,18 +64,32 @@ public class WorkoutEntryActivity extends AppCompatActivity
             Toast.makeText(this, "Workout length must be a number", Toast.LENGTH_SHORT).show();
             return;
         }
-//        Try adding to database
-//        boolean success = Testdatabase.insertWorkout(name, type, len);
+
+        workoutDatabase.addWorkout(name, len, calories)
+                .addOnSuccessListener(documentReference -> {
+                    Toast.makeText(this, "Workout added!", Toast.LENGTH_SHORT).show();
+                    loadWorkouts(); // Refresh the list
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
         boolean success = true;
         if (success) {
             Toast.makeText(this, "Workout recorded!", Toast.LENGTH_SHORT).show();
             // Optionally clear inputs
             mWorkoutName.setText("");
-            mWorkoutType.setText("");
+            mWorkoutCals.setText("");
             mWorkoutLength.setText("");
         } else {
             Toast.makeText(this, "Error saving workout", Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    private void loadWorkouts() {
+        workoutDatabase.getWorkoutsForCurrentUser()
+                .addOnSuccessListener(querySnapshot -> {
+                    // Process and update UI
+                });
     }
 }

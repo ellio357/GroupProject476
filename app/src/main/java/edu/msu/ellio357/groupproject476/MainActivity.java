@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+
     private EditText emailEditText, passwordEditText;
 
     @Override
@@ -69,4 +70,5 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
     }
+
 }
