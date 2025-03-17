@@ -11,4 +11,7 @@
     <string name="welcome">Welcome!</string>
     <string name="logout">Logout</string>
     <string name="register">Register</string>
+    <string name="library">Workout Library</string>
+    <string name="history">Workout History</string>
+    <string name="log">Log Workout</string>
 </resources>
