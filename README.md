@@ -3,8 +3,8 @@
 - Hussein Ahmad
 - Jordan S
 - Kelsi Elliott
-- Mayank
-- Mohid
+- Mayank Gudi
+- Mohid Imran
 
 ### Assignment Goals
 - "A multi-touch-responsive UI that works at multiple screen sizes, resolutions, and orientations
