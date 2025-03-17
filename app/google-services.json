@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "765258605491",
+    "project_id": "project-e1634",
+    "storage_bucket": "project-e1634.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765258605491:android:9e0635adf4411cc15f61c6",
+        "android_client_info": {
+          "package_name": "edu.msu.ellio357.groupproject476"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5yr3QAzb_N2BPjHrCNr34Od6hskpyOJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
