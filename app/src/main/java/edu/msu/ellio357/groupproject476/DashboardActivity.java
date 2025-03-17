@@ -25,6 +25,7 @@ public class DashboardActivity extends AppCompatActivity {
 
         TextView welcomeTextView = findViewById(R.id.textViewWelcome);
         Button logoutButton = findViewById(R.id.buttonLogout);
+        Button workoutHistoryButton = findViewById(R.id.history_button);
 
         if (user != null) {
             welcomeTextView.setText("Welcome, " + user.getEmail());
@@ -38,6 +39,9 @@ public class DashboardActivity extends AppCompatActivity {
             mAuth.signOut();
             startActivity(new Intent(this, MainActivity.class));
             finish();
+        });
+        workoutHistoryButton.setOnClickListener(v -> {
+            startActivity(new Intent(this, WorkoutHistoryActivity.class));
         });
     }
 }
