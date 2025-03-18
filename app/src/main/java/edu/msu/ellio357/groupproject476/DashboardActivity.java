@@ -26,6 +26,7 @@ public class DashboardActivity extends AppCompatActivity {
         TextView welcomeTextView = findViewById(R.id.textViewWelcome);
         Button logoutButton = findViewById(R.id.buttonLogout);
         Button workoutHistoryButton = findViewById(R.id.history_button);
+        Button libaryButton = findViewById(R.id.library_button);
 
         Button logWorkout = findViewById(R.id.log_button);
 
@@ -44,6 +45,9 @@ public class DashboardActivity extends AppCompatActivity {
         });
         workoutHistoryButton.setOnClickListener(v -> {
             startActivity(new Intent(this, WorkoutHistoryActivity.class));
+        });
+        libaryButton.setOnClickListener(v -> {
+            startActivity(new Intent(this, WorkoutLibraryActivity.class));
         });
 
         logWorkout.setOnClickListener(v -> {

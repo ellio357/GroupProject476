@@ -41,9 +41,25 @@ public class WorkoutEntryActivity extends AppCompatActivity
         Toast.makeText(this, "Workout Entry Screen Loaded", Toast.LENGTH_SHORT).show();
 
         Button recordButton = findViewById(R.id.recordButton);
+        Button historyButton = findViewById(R.id.history_button);
+        Button logoutButton = findViewById(R.id.logout_button);
+        Button libraryButton = findViewById(R.id.library_button);
 
         recordButton.setOnClickListener(v -> recordWorkout());
         loadWorkouts();
+
+        /**
+         * Menu buttons
+         */
+        libraryButton.setOnClickListener(v -> {
+            startActivity(new Intent(this, WorkoutLibraryActivity.class));
+        });
+        historyButton.setOnClickListener(v -> {
+            startActivity(new Intent(this, WorkoutHistoryActivity.class));
+        });
+        logoutButton.setOnClickListener(v -> {
+            startActivity(new Intent(this, DashboardActivity.class));
+        });
     }
 
     protected void recordWorkout()

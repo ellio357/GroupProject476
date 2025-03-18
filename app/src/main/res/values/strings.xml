@@ -20,4 +20,5 @@
     <string name="workout_entry">Enter Workout</string>
     <string name="workout_cals">Enter Calories Burned</string>
     <string name="workout_length">Enter Workout Length (minutes)</string>
+    <string name="home">Home</string>
 </resources>
