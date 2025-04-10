@@ -51,4 +51,10 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="@string/logout" />
+
+    <Button
+        android:id="@+id/find_gym_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/find_nearest_gym" />
 </LinearLayout>
