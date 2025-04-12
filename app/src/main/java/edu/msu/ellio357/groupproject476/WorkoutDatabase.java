@@ -102,7 +102,7 @@ public class WorkoutDatabase {
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         return workoutsCollection
                 .whereEqualTo("userId", userId)
-                .orderBy("createdAt", Query.Direction.DESCENDING)
+                //.orderBy("createdAt", Query.Direction.DESCENDING)
                 .get();
     }
 
