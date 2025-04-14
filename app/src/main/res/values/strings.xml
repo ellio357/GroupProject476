@@ -23,4 +23,6 @@
     <string name="home">Home</string>
     <string name="find_nearest_gym">Find Nearest Gym</string>
     <string name="register_prompt">Register a New Email</string>
+    <string name="backButton">Back</string>
+    <string name="delete">Delete</string>
 </resources>

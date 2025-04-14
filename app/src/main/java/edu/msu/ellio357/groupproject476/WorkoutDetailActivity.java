@@ -2,6 +2,7 @@ package edu.msu.ellio357.groupproject476;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,5 +26,14 @@ public class WorkoutDetailActivity extends AppCompatActivity {
         detailLength.setText("Length: " + intent.getIntExtra("workoutLength", 0) + " mins");
         detailCals.setText("Calories: " + intent.getIntExtra("workoutCalories", 0));
         detailDate.setText("Created: " + intent.getStringExtra("workoutCreated"));
+
+        Button backButton = findViewById(R.id.backButton);
+
+        /**
+         * Menu buttons
+         */
+        backButton.setOnClickListener(v -> {
+            startActivity(new Intent(this, WorkoutHistoryActivity.class));
+        });
     }
 }
