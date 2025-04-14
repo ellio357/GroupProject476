@@ -36,4 +36,5 @@ public class WorkoutDetailActivity extends AppCompatActivity {
             startActivity(new Intent(this, WorkoutHistoryActivity.class));
         });
     }
+
 }
