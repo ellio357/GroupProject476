@@ -56,6 +56,41 @@ public class DashboardActivity extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
 
         TextView welcomeTextView = findViewById(R.id.textViewWelcome);
+
+        TextView recommendationTextView = findViewById(R.id.textViewRecommendation);
+
+        Calendar calendar = Calendar.getInstance();
+        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+
+        String message;
+        switch (dayOfWeek) {
+            case Calendar.MONDAY:
+                message = "Start your week strong! Try a full-body workout today.";
+                break;
+            case Calendar.TUESDAY:
+                message = "How about a cardio session today?";
+                break;
+            case Calendar.WEDNESDAY:
+                message = "Today we do push!";
+                break;
+            case Calendar.THURSDAY:
+                message = "Perfect day for strength training!";
+                break;
+            case Calendar.FRIDAY:
+                message = "Almost the weekend, lets do legs!";
+                break;
+            case Calendar.SATURDAY:
+                message = "Try a new outdoor activity today!";
+                break;
+            case Calendar.SUNDAY:
+                message = "Rest and recover. You deserve it!";
+                break;
+            default:
+                message = "Keep moving forward!";
+        }
+
+        recommendationTextView.setText(message);
+
         Button logoutButton = findViewById(R.id.buttonLogout);
         Button workoutHistoryButton = findViewById(R.id.history_button);
         Button libaryButton = findViewById(R.id.library_button);
