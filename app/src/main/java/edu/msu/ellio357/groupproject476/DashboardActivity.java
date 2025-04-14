@@ -66,28 +66,28 @@ public class DashboardActivity extends AppCompatActivity {
         String message;
         switch (dayOfWeek) {
             case Calendar.MONDAY:
-                message = "Start your week strong! Try a full-body workout today.";
+                message = getString(R.string.mondayRec);
                 break;
             case Calendar.TUESDAY:
-                message = "How about a cardio session today?";
+                message = getString(R.string.tuesRec);
                 break;
             case Calendar.WEDNESDAY:
-                message = "Today we do push!";
+                message = getString(R.string.wedRec);
                 break;
             case Calendar.THURSDAY:
-                message = "Perfect day for strength training!";
+                message = getString(R.string.thursRec);
                 break;
             case Calendar.FRIDAY:
-                message = "Almost the weekend, lets do legs!";
+                message = getString(R.string.friRec);
                 break;
             case Calendar.SATURDAY:
-                message = "Try a new outdoor activity today!";
+                message = getString(R.string.satRec);
                 break;
             case Calendar.SUNDAY:
-                message = "Rest and recover. You deserve it!";
+                message = getString(R.string.sunRec);
                 break;
             default:
-                message = "Keep moving forward!";
+                message = getString(R.string.defaultRec);
         }
 
         recommendationTextView.setText(message);

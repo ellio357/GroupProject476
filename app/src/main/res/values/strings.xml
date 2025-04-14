@@ -26,4 +26,12 @@
     <string name="backButton">Back</string>
     <string name="delete">Delete</string>
     <string name="recommendation">Todays recommendation</string>
+    <string name="mondayRec">"Start your week strong! Try a full-body workout today."</string>
+    <string name="tuesRec">How about a cardio session today?</string>
+    <string name="wedRec">Today we do push!</string>
+    <string name="thursRec">Perfect day for strength training!</string>
+    <string name="friRec">Almost the weekend, lets do legs!</string>
+    <string name="satRec">Try a new outdoor activity today!</string>
+    <string name="sunRec">Rest and recover. You deserve it!</string>
+    <string name="defaultRec">Keep moving forward!</string>
 </resources>

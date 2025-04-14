@@ -27,6 +27,7 @@ public class WorkoutLibraryActivity extends AppCompatActivity {
         Button logoutButton = findViewById(R.id.logout_button);
         Button logButton = findViewById(R.id.log_button);
 
+
         /**
          * Menu buttons
          */
