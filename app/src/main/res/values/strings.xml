@@ -25,4 +25,5 @@
     <string name="register_prompt">Register a New Email</string>
     <string name="backButton">Back</string>
     <string name="delete">Delete</string>
+    <string name="recommendation">Todays recommendation</string>
 </resources>
