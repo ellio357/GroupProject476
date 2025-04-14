@@ -35,21 +35,23 @@
 
             <Button
                 android:id="@+id/history_button"
-                android:layout_width="wrap_content"
+                android:layout_width="20dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_margin="5dp"
                 android:text="@string/history" />
 
             <Button
                 android:id="@+id/log_button"
-                android:layout_width="wrap_content"
+                android:layout_width="20dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_margin="5dp"
                 android:text="@string/log" />
 
             <Button
                 android:id="@+id/logout_button"
-                android:layout_width="20dp"
+                android:layout_width="15dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
