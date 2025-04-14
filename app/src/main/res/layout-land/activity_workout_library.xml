@@ -70,6 +70,5 @@
                 android:layout_weight="1"
                 android:text="@string/home" />
         </LinearLayout>
-
     </LinearLayout>
 </edu.msu.ellio357.groupproject476.ZoomLayout>
