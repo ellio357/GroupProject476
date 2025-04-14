@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/LinearLayout"
     android:layout_width="match_parent"
@@ -22,15 +22,14 @@
             android:layout_height="wrap_content"
             android:text="@string/welcome_message"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/welcomeDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,7 +38,6 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="20dp">
-
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/usernameTextInput"
@@ -53,9 +51,8 @@
                 android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"/>
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
-
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordTextInput"
@@ -69,21 +66,20 @@
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
-
 
         <Button
             android:id="@+id/loginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/login_button"
-            android:padding="15dp"/>
+            android:padding="15dp" />
+
         <Button
             android:id="@+id/registerNavButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/create_an_account"/>
-
+            android:text="@string/create_an_account" />
     </LinearLayout>
 </LinearLayout>

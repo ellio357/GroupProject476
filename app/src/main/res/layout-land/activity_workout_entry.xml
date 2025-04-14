@@ -1,114 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<edu.msu.ellio357.groupproject476.ZoomLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/LinearLayout"
+    android:id="@+id/zoomLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".MainActivity"
-    android:padding="20dp">
+    tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/LinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/workoutEntryMessage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/workout_message"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp">
-
-        <com.google.android.material.textfield.TextInputLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/workout_entry">
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/addWorkoutName"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/workoutEntryMessage"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="textShortMessage" />
+                android:text="@string/workout_message"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/workout_cals">
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/addWorkoutCals"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textShortMessage" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:hint="@string/workout_entry">
 
-        <com.google.android.material.textfield.TextInputLayout
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addWorkoutName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textShortMessage" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/workout_cals">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addWorkoutCals"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textShortMessage" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/workout_length">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addWorkoutLength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/recordButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/record" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/workout_length">
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/addWorkoutLength"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number" />
-        </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/recordButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/record" />
+            <Button
+                android:id="@+id/library_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:text="@string/library" />
+
+            <Button
+                android:id="@+id/history_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:text="@string/history" />
+
+            <Button
+                android:id="@+id/logout_button"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:text="@string/home" />
+        </LinearLayout>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
-
-
-        <Button
-            android:id="@+id/library_button"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
-            android:text="@string/library" />
-
-        <Button
-            android:id="@+id/history_button"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
-            android:text="@string/history" />
-
-        <Button
-            android:id="@+id/logout_button"
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
-            android:text="@string/home" />
-    </LinearLayout>
-
-</LinearLayout>
+</edu.msu.ellio357.groupproject476.ZoomLayout>
