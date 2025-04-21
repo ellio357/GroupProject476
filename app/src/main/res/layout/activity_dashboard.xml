@@ -1,71 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="@color/white"
-    android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/textViewWelcome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:text="@string/welcome"
-        android:textSize="40sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textViewRecommendation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:text="@string/recommendation"
-        android:textSize="20sp"/>
-    
+    android:background="#C0C0C0"
+    android:padding="24dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_gravity="clip_vertical"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textViewWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="@string/welcome"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewRecommendation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:text="@string/recommendation"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/history_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="12dp"
+                android:backgroundTint="@android:color/black"
+                android:text="@string/history" />
+
+            <Button
+                android:id="@+id/library_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/black"
+                android:textColor="@android:color/white"
+                android:text="@string/library" />
+        </LinearLayout>
 
         <Button
-            android:id="@+id/history_button"
-            android:layout_width="145dp"
+            android:id="@+id/log_button"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/history"
-            android:layout_marginEnd="20dp" />
+            android:layout_marginBottom="16dp"
+            android:padding="12dp"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/white"
+            android:text="@string/log" />
 
         <Button
-            android:id="@+id/library_button"
-            android:layout_width="145dp"
+            android:id="@+id/find_gym_button"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/library" />
+            android:layout_marginBottom="16dp"
+            android:padding="12dp"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/white"
+            android:text="@string/find_nearest_gym" />
+
+        <Button
+            android:id="@+id/buttonLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:backgroundTint="@android:color/black"
+            android:text="@string/logout"
+            android:layout_marginBottom="24dp" />
+
+        <ImageView
+            android:id="@+id/imageFooter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+
+            android:scaleType="fitCenter"
+            android:src="@drawable/gym" />
+
     </LinearLayout>
-
-    <Button
-        android:id="@+id/log_button"
-        android:layout_width="145dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:padding="10dp"
-        android:text="@string/log" />
-
-    <Button
-        android:id="@+id/buttonLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/logout" />
-
-    <Button
-        android:id="@+id/find_gym_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/find_nearest_gym" />
-</LinearLayout>
+</ScrollView>
