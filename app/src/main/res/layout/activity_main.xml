@@ -9,6 +9,13 @@
     android:background="#C0C0C0"
     android:padding="24dp"
     tools:context=".MainActivity">
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:src="@drawable/fitnessplus"
+        android:contentDescription="@string/app_logo" />
 
 
     <LinearLayout

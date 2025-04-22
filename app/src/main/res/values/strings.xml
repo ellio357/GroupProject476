@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">GroupProject476</string>
-    <string name="welcome_message">Welcome to our Group\'s App</string>
+    <string name="welcome_message">Welcome to Fitness Plus</string>
     <string name="welcome_description">This app ______</string>
     <string name="login_button">Enter to Login</string>
     <string name="password_hint">Enter your password:</string>
@@ -50,6 +50,7 @@
     <string name="fri">Try this Pilates workout today!</string>
     <string name="sat">Try this Upper Body workout today!</string>
     <string name="sun">Try this Full Body workout today!</string>
+    <string name="app_logo">Fitness Plus Logo</string>
     <string name="enter_gym">Select a Gym or Enter One</string>
     <string name="planet_fitness">Planet Fitness</string>
     <string name="lifetime_fitness">Lifetime Fitness</string>
