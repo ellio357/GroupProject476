@@ -145,11 +145,9 @@ public class DashboardActivity extends AppCompatActivity {
         // Force the screen to say on and bright
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        findViewById(R.id.find_gym_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openMapWithRoute();
-            }
+        findViewById(R.id.find_gym_button).setOnClickListener(v -> {
+            Intent intent = new Intent(DashboardActivity.this, FindGymActivity.class);
+            startActivity(intent);
         });
     }
 
