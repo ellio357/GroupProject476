@@ -29,7 +29,6 @@ public class FindGymActivity extends AppCompatActivity {
 
     private TextView textLocationInfo;
     private EditText editTextLocationInput;
-    private Button buttonShowRoute;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +37,9 @@ public class FindGymActivity extends AppCompatActivity {
 
         textLocationInfo = findViewById(R.id.textDistanceToGym);
         editTextLocationInput = findViewById(R.id.editTextLocationInput);
-        buttonShowRoute = findViewById(R.id.buttonShowRoute);
-
+        Button buttonShowRoute = findViewById(R.id.buttonShowRoute);
+        Button buttonHome = findViewById(R.id.buttonHome);
         RadioGroup gymRadioGroup = findViewById(R.id.gymRadioGroup);
-        EditText editTextLocationInput = findViewById(R.id.editTextLocationInput);
 
         gymRadioGroup.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == R.id.radioPlanetFitness) {
@@ -52,7 +50,7 @@ public class FindGymActivity extends AppCompatActivity {
                 editTextLocationInput.setText(R.string.powerhouse_gym);
             }
         });
-        Button buttonHome = findViewById(R.id.buttonHome);
+
         buttonHome.setOnClickListener(v -> {
             Intent intent = new Intent(FindGymActivity.this, DashboardActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -60,13 +58,8 @@ public class FindGymActivity extends AppCompatActivity {
             finish();
         });
 
-
-        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        requestUserLocation();
-
         buttonShowRoute.setOnClickListener(v -> {
             String destination = editTextLocationInput.getText().toString().trim();
-
             if (!hasLocation) {
                 Toast.makeText(this, "Current location not available", Toast.LENGTH_SHORT).show();
             } else if (destination.isEmpty()) {
@@ -75,11 +68,13 @@ public class FindGymActivity extends AppCompatActivity {
                 String uri = String.format(Locale.US,
                         "https://www.google.com/maps/dir/?api=1&origin=%f,%f&destination=%s&travelmode=driving",
                         latitude, longitude, Uri.encode(destination));
-
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
                 startActivity(Intent.createChooser(intent, "Open route with..."));
             }
         });
+
+        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        requestUserLocation();
     }
 
     private void requestUserLocation() {
@@ -104,7 +99,7 @@ public class FindGymActivity extends AppCompatActivity {
                     longitude = location.getLongitude();
                     hasLocation = true;
                     textLocationInfo.setText(String.format(Locale.US,
-                            "Current Location:\nLatitude: %.5f, Longitude: %.5f", latitude, longitude));
+                            "Current Location:\nLatitude: %.5f\nLongitude: %.5f", latitude, longitude));
                 }
 
                 @Override public void onStatusChanged(String provider, int status, Bundle extras) {}
