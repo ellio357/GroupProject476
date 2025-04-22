@@ -64,11 +64,19 @@
             android:layout_marginBottom="24dp"
             android:textAlignment="center" />
 
+
         <Button
             android:id="@+id/buttonShowRoute"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/black"
             android:text="@string/show_route" />
+        <Button
+            android:id="@+id/buttonHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home"
+            android:layout_marginTop="24dp" />
+
     </LinearLayout>
 </ScrollView>

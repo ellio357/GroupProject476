@@ -52,6 +52,13 @@ public class FindGymActivity extends AppCompatActivity {
                 editTextLocationInput.setText(R.string.powerhouse_gym);
             }
         });
+        Button buttonHome = findViewById(R.id.buttonHome);
+        buttonHome.setOnClickListener(v -> {
+            Intent intent = new Intent(FindGymActivity.this, DashboardActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+            finish();
+        });
 
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
