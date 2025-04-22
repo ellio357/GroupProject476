@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".WorkoutLibraryActivity"
     android:padding="20dp"
-    android:background="@color/white">
+    android:background="#C0C0C0">
 
 
     <LinearLayout
@@ -63,6 +63,7 @@
                         android:id="@+id/history_button"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:backgroundTint="@android:color/black"
                         android:layout_margin="5dp"
                         android:text="@string/history" />
 
@@ -70,6 +71,7 @@
                         android:id="@+id/log_button"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:backgroundTint="@android:color/black"
                         android:layout_margin="5dp"
                         android:text="@string/log" />
 
@@ -77,6 +79,7 @@
                         android:id="@+id/logout_button"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:backgroundTint="@android:color/black"
                         android:layout_margin="5dp"
                         android:text="@string/home" />
                 </LinearLayout>
