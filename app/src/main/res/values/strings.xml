@@ -21,7 +21,7 @@
     <string name="workout_cals">Enter Calories Burned</string>
     <string name="workout_length">Enter Workout Length (minutes)</string>
     <string name="home">Home</string>
-    <string name="find_nearest_gym">Find Nearest Gym</string>
+    <string name="find_nearest_gym">Find a Gym</string>
     <string name="register_prompt">Register a New Email</string>
     <string name="backButton">Back</string>
     <string name="delete">Delete</string>
