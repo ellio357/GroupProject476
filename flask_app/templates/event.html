@@ -1,0 +1,29 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<div class="pane">
+
+  <div class="card">
+    <h1>{{ event.name }}</h1>
+    <p><strong>Date Range:</strong> {{ event.start_date }} to {{ event.end_date }}</p>
+    <p><strong>Daily Time Range:</strong> {{ event.start_time }} – {{ event.end_time }}</p>
+  </div>
+
+  <div class="card">
+    <h2>Participants</h2>
+    <ul>
+      {% for participant in participants %}
+        <li>{{ participant.email }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Availability Grid (Coming Soon)</h2>
+    <p>This is where you'll select your availability across days and times. Stay tuned!</p>
+    <!-- Placeholder for interactive availability grid -->
+    <div id="grid-placeholder" style="height: 300px; background: #f0f0f0; border: 1px dashed #ccc;"></div>
+  </div>
+
+</div>
+{% endblock %}

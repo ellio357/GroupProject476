@@ -1,0 +1,36 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<div class="pane">
+  <div class="card">
+    <h1>Create New Event</h1>
+    <form method="POST" action="/create_event" id="create-event-form">
+      <label for="name">Event Name:</label>
+      <input type="text" id="name" name="name" required>
+      <br>
+      <br>
+      <label for="start_date">Start Date:</label>
+      <input type="date" id="start_date" name="start_date" required>
+
+      <label for="end_date">End Date:</label>
+      <input type="date" id="end_date" name="end_date" required>
+      <br>
+      <br>
+      <label for="start_time">Daily Start Time:</label>
+      <input type="time" id="start_time" name="start_time" required>
+
+      <label for="end_time">Daily End Time:</label>
+      <input type="time" id="end_time" name="end_time" required>
+      <br>
+      <br>
+      <label for="invitees">Invitee Emails (comma-separated):</label>
+      <input type="text" id="invitees" name="invitees" required>
+
+      <br>
+      <br>
+      <input type="submit" value="Create Event">
+    </form>
+    <div id="form-message" class="error"></div>
+  </div>
+</div>
+{% endblock %}
