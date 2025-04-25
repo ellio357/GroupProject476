@@ -28,18 +28,34 @@ def getUser():
 
 @app.route('/login')
 def login():
-    return render_template('login.html')
+    session.pop('email', default=None)
+    return render_template('login.html', user="Unknown")
 
 @app.route('/logout')
 def logout():
 	session.pop('email', default=None)
 	return redirect('/')
 
-@app.route('/processlogin', methods = ["POST","GET"])
-def processlogin():
-	form_fields = dict((key, request.form.getlist(key)[0]) for key in list(request.form.keys()))
-	session['email'] = form_fields['email']
-	return json.dumps({'success':1})
+@app.route('/processlogin', methods=['POST'])
+def process_login():
+    email = request.form.get('email')
+    password = request.form.get('password')
+    new_user = request.form.get('new_user') == 'true' 
+
+    if new_user:
+        result = db.createUser(email=email, password=password)
+        if result.get('success') == 0:
+            return json.dumps({'success': 0, 'message': result.get('message', 'Failed to create user')})
+    else:
+        encrypted = db.onewayEncrypt(password)
+        user = db.query("SELECT * FROM users WHERE email = %s AND password = %s", (email, encrypted))
+
+        if not user:
+            return json.dumps({'success': 0, 'message': 'Invalid email or password'})
+    
+    session['email'] = email
+    return json.dumps({'success': 1})
+
 
 
 #######################################################################################
@@ -54,16 +70,37 @@ def home():
 	print(db.query('SELECT * FROM users'))
 	return render_template('home.html', user=getUser())
 
-@app.route('/create_event')
+@app.route('/create_event', methods=['GET', 'POST'])
 @login_required
 def create_event():
-    user = getUser()
-    return render_template('create_event.html', user=user)
+    user_email = getUser()
+
+    if request.method == 'POST':
+        form = request.form
+        name = form.get('name')
+        start_date = form.get('start_date')
+        end_date = form.get('end_date')
+        start_time = form.get('start_time')
+        end_time = form.get('end_time')
+        invitees_raw = form.get('invitees', '')
+        invitees = [email.strip() for email in invitees_raw.split(',') if email.strip()]
+
+
+    return render_template('create_event.html', user=user_email)
+
+
+@app.route('/join_event')
+@login_required
+def join_event():
+    user_email = getUser()
+    return render_template('join_event.html', user=user_email)
 
 @app.route('/events')
 @login_required
 def events():
-    user = getUser()
+    user_email = getUser()
+    user = user_email if user_email else 'Unknown'
+    user_events = db.get_user_events(user_email)
     return render_template('events.html', user=user)
 
 
@@ -73,4 +110,10 @@ def add_header(r):
     r.headers["Pragma"] = "no-cache"
     r.headers["Expires"] = "0"
     return r
+
+@app.route('/users')
+def show_users():
+    users = db.query("SELECT email FROM users")
+    return render_template('users.html', users=users)
+
 

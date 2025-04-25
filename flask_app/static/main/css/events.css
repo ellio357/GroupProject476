@@ -11,8 +11,12 @@ div.card {
     border-radius: 2px;
     margin: 5px;
     padding: 20px;
+    width: 80%;
+    align-items: center;
 
 }
+
+  
 .event-list {
     list-style: none;
     padding: 0;

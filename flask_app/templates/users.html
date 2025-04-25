@@ -1,0 +1,24 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+    <div class="pane">
+
+        <!-- Event Options -->
+        <div class="card">
+            <h1>Users(s)</h1>
+            <table>
+                <tr>
+                    <th>Email</th>
+                    <th>Password</th>
+                </tr>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    
+      </div>
+
+{% endblock %}
